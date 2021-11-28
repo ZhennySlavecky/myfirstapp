@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">MyFirstApplication</string>
+    <string name="app_name">New App</string>
+    <string name="hello">Hello!</string>
+    <string name="bye">Bye!</string>
+    <string name="button">BUTTON</string>
+    <string name="str1">Но, прокаркав это слово, вновь молчал уж он сурово,</string>
+    <string name="str2">Словно всю в нем вылил душу — и замкнул ее затвор.</string>
+    <string name="str3">Он сидел легко и статно, и шепнул я еле внятно:</string>
+    <string name="str4">«Завтра утром невозвратно улетит он на простор —</string>
+    <string name="str5">Как друзья — как все надежды — улетит он на простор…»</string>
+    <string name="str6">Каркнул Ворон: «Nevermore».</string>
 </resources>
