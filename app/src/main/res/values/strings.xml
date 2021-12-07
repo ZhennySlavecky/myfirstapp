@@ -9,4 +9,10 @@
     <string name="str4">«Завтра утром невозвратно улетит он на простор —</string>
     <string name="str5">Как друзья — как все надежды — улетит он на простор…»</string>
     <string name="str6">Каркнул Ворон: «Nevermore».</string>
+    <string name="_2_fragment">_2_fragment</string>
+    <string name="_1_fragment">_1_fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_fragment">First fragment</string>
+    <string name="second_fragment">Second Fragment</string>
 </resources>

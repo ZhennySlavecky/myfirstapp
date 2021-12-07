@@ -5,70 +5,44 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-const val TAG="MainActivity"
-
+private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
-    lateinit var helloTextView: TextView
-    lateinit var newTextButton: Button
 
+    lateinit var bottomNavigationMenu: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        Log.d(TAG,getString(R.string.str1))
-
-        fun main(): String {
-           val value: String
-           value = ""
-            for (i in 'a'..'z'){
-                if (i.code % 2 == 0) value.append(i)
+        bottomNavigationMenu = findViewById(R.id.bottom_navigation_menu)
+        bottomNavigationMenu.setOnItemSelectedListener { item->
+            var fragment: Fragment?=null
+            when (item.itemId){
+                R.id.fragment_1->{
+                    fragment=FirstFragment()
+                }
+                R.id.fragment_2->{
+                    fragment=SecondFragment()
+                }
             }
-            return value
+            replaceFragment(fragment!!)
+            true
         }
 
-        helloTextView = findViewById(R.id.hello)
-        newTextButton = findViewById(R.id.center_button)
-
-        fun newTextButtonClick() {
-            newTextButton.setOnClickListener {
-                helloTextView.text = main()
-            }
-        }
-
-        newTextButtonClick()
+        bottomNavigationMenu.selectedItemId = R.id.fragment_1
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG,getString(R.string.str2))
+    fun replaceFragment (fragment: Fragment){
+        supportFragmentManager
+            .beginTransaction()
+            .replace (R.id.fragment_container, fragment)
+            .addToBackStack(fragment.tag)
+            .commit()
+
     }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG,getString(R.string.str3))
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(TAG,getString(R.string.str4))
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG,getString(R.string.str5))
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(TAG,getString(R.string.str6))
-    }
-
-}
-
-private fun String.append(i: Char) {
-
 }
 
